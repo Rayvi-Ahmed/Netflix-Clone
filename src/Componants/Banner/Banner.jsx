@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import requests from '../../request';
 
-
 const Banner = () => {
     const [movies,setMovies]=useState([])
     
@@ -16,7 +15,6 @@ const Banner = () => {
 })
     },[])
 
-    console.log(movie)
 
     const tuncreteString=(str,num)=>{
     if(str?.length>num){
@@ -31,13 +29,12 @@ const Banner = () => {
         <div className='w-full h-[550px] text-white'>
             <div className='w-full h-full'>
           <div className='abulate w-full h-[550px] bg-gradient-to-l from-black'>
-          <img className='w-full h-full object-cover opacity-95' src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`} alt={movie?.title} />
+          <img className='w-full h-full object-cover bg-black/60 opacity-60' src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`} alt={movie?.title} />
           </div>
             </div>
 
       <div className='w-full absolute top-[20%] p-4 md:p-8'>
         <h1 className='text-gray-100 font-bold text-3xl md:text-5xl py-2'>{movie?.title}</h1>
-       
       <div>
                 <button className='border bg-gray-300 border-gray-300 px-4 py-2'>Play</button>
                 <button className='border border-gray-300 px-4 py-2 text-white ml-2'>Watch Leter</button>

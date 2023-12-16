@@ -7,13 +7,13 @@ import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
 const {user,loading,SignUp}=useContext(AuthContext)
+console.log(user)
 
 const navigate = useNavigate()
-
-
 const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
       const onSubmit=(data)=>{
+
         SignUp(data.email,data.password).then(result=>{
             const createUser=result.user
             console.log(createUser)

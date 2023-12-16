@@ -13,9 +13,6 @@ const AllMovies = ({title,fetchUrl}) => {
 
     },[fetchUrl])
 
-    console.log(movies)
-
-
     return (
 
     <div>

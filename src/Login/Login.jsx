@@ -12,15 +12,16 @@ const Login = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const onSubmit=(data)=>{
-        LogIn(data.email,data.password).then(result=>{
-            const loggedUser=result.user
-            console.log(loggedUser)
+        
+        LogIn(data.email, data.password)
+        .then(result=>{
+            const logUser=result.user
+            console.log(logUser)
         })
-        console.log(data)
         reset()
         navigate('/')
     }
-
+ 
     return (
         <>
          <div className='w-full h-screen'>

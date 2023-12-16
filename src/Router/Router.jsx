@@ -5,6 +5,7 @@ import Home from "../Home/Home";
 import SignUp from "../SignUp/SignUp";
 import Login from "../Login/Login";
 import Account from "../Account/Account";
+import PrivateRoute from "../AuthProvider/PrivateRoute/PrivateRoute";
 
 
 
@@ -27,7 +28,9 @@ export const router = createBrowserRouter([
         },
         {
           path:'/account',
-          element:<Account></Account>
+          element:<PrivateRoute>
+            <Account></Account>
+          </PrivateRoute>
         }
       ]
     },

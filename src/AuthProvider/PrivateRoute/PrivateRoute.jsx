@@ -7,31 +7,13 @@ const PrivateRoute = ({children}) => {
     const location = useLocation()
 
     if(loading){
-        return "LOADING........ Please one sec"
+        return <h1 className='text-white py-16 w-full mx-auto text-2xl'>"LOADING........ Please one sec"</h1>
     }
 
     if(user?.email){
         return children;
     }
-    return (
-        Swal.fire({
-            title: "You must be log in !",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
-          }).then((result) => {
-            if (result.isConfirmed) {
-              Swal.fire({
-                title: "Deleted!",
-                text: "Your file has been deleted.",
-                icon: "success"
-              });
-            }
-          })
-    );
+  return <Navigate to={'/'}></Navigate>;
 };
 
 export default PrivateRoute;
